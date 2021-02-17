@@ -1,6 +1,9 @@
 # tvengine
 TextVentureEngine is a dynamic, powerful engine that can be used to play and make text-adventures playable in the command line.
 
+## How to use
+Open the app, then type /game <path at which a .tves is located>, obviously replacing the text in <> with a path to a tves. For example, /game C:\Users\Your Username\Desktop\example.tves
+
 ## How it works
 TVEngine is written in C#. It loades JSON-like files called TVEScripts, or TVEHexes. Compiled files called TVECompiles are a planned add in the future. These contain various "labels" that ask the player a question and gets responses, which can in turn direct the player to other labels.
 
