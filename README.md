@@ -21,7 +21,7 @@ TVEDevKit will be a distribution of TVEngine, containing several development uti
 * TVEngine Make - GUI TextVenture Creator.
 * .tvhx converter - converts a .tvsc to .tvhx.
 * .tvcm converter - converts a .tvsc or .tvhx to .tvcm.
-* .exe converter - create a fully packed .exe from a .tvsc, .tvhx, or .tvcm. This can be played without the engine installed.\
+* .exe converter - create a fully packed .exe from a .tvsc, .tvhx, or .tvcm. This can be played without the engine installed.
 
 ## Expected Release
 TVEngine Beta and it's accompanying utilities will release around mid-April.
