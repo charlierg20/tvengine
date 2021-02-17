@@ -45,7 +45,7 @@ The .tvsc format has not been finalized, as we are still in active development. 
   }
 }
 ```
-"action" is required for both types. "message" and "responses" are required for ASK types. An END label will quit the game.
+"action" is required for both types. "message" and "responses" are required for ASK types. An END label will quit the game. A label called "start" **must** exist as this is where the engine starts looking.
 
 ## TVEngine Make
 Make is a separate program for easy, flowchart-like development of your TextVentures. It will be built into the TVE Development Kit.
