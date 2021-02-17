@@ -1,0 +1,29 @@
+{
+  "labels": {
+    "start" : {
+      "action" : "ASK",
+      "message" : "What do you want to do, {name}? \"kill\" or \"run\"?",
+      "responses" : {
+        "kill" : "label3",
+        "run" : "label4"
+      }
+    },
+    "label3" : {
+      "action" : "ASK",
+      "message" : "We are on Number 2! \"proc\" to proceed!",
+      "responses" : {
+        "proc" : "label4"
+      }
+    },
+    "label4" : {
+      "action" : "ASK",
+      "message" : "We are on the final one. \"end\" to finish up.",
+      "responses" : {
+        "end" : "final"
+      }
+    },
+    "final" : {
+      "action" : "END"
+    }
+  }
+}
