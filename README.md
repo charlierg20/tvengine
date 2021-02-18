@@ -8,12 +8,12 @@ Open the app, then type /game <path at which a .tves is located>, obviously repl
 TVEngine is written in C#. It loades JSON-like files called TVEScripts, or TVEHexes. Compiled files called TVECompiles are a planned add in the future. These contain various "labels" that ask the player a question and gets responses, which can in turn direct the player to other labels.
 
 ## File types
-.tvsc - Standard files containing a JSON-like script. These are **great** for testing but not so great for any production release, as the user can edit them easily.
-.tvhx - A .tvsc file in hexadecimal format. Harder to read by the user, so are better for commercial release.
-.tvcm - A fully compiled .tvsc practically impossible to edit or view by the user in any meaningful format. Support for these hasn't been released yet, and won't be for a while.
+.tves - Standard files containing a JSON-like script. These are **great** for testing but not so great for any production release, as the user can edit them easily.
+.tvhx - A .tves file in hexadecimal format. Harder to read by the user, so are better for commercial release.
+.tvcm - A fully compiled .tves practically impossible to edit or view by the user in any meaningful format. Support for these hasn't been released yet, and won't be for a while.
 
 ## Developing
-The .tvsc format has not been finalized, as we are still in active development. .tvsc are the only supported files at the moment. Here is an example:
+The .tves format has not been finalized, as we are still in active development. .tves are the only supported files at the moment. Here is an example:
 ```
 {
   "labels": {
