@@ -16,6 +16,7 @@ namespace TVEngine
         {
             string name = "Default";
             string currentLabel = "start";
+            string currentGame = "SPECIAL:NOGAME";
             bool running = true;
             bool gameRunning = false;
 
@@ -50,10 +51,12 @@ namespace TVEngine
                         Console.WriteLine("The following system commands are available: \n" +
                             "/help - shows all commands\n" +
                             "/name - set the special variable \"name\"\n" +
-                            "/game <path> - loads a game. Beware that the program will crash if it is not formatted correctly.\n" +
+                            "/game - loads a game into memory.\n" +
                             "/end - ends the game and goes back to the prompt\n" +
                             "/quit - quit TVE\n" +
-                            "/about - about and credits");
+                            "/about - about and credits\n" +
+                            "/save - save game\n" +
+                            "/load - load game - only load for the game in which the save point was created");
                     }
                     else if (cmd.StartsWith("/quit"))
                     {
@@ -71,9 +74,10 @@ namespace TVEngine
                             "This program is under the GNU 3.0 license. See more at the GitHub repository.\n" +
                             "TVE also uses JSON.NET, which is under the MIT license and made by NewtonSoft.");
                     }
-                    else if (cmd.StartsWith("/game "))
+                    else if (cmd.StartsWith("/game"))
                     {
-                        string ncmd = cmd.Replace("/game ", "");
+                        Console.WriteLine("Enter path.");
+                        string ncmd = Console.ReadLine();
                         if (!File.Exists(@"" + ncmd))
                         {
                             Console.WriteLine("File not found.");
@@ -85,8 +89,48 @@ namespace TVEngine
                         else
                         {
                             gameRunning = true;
+                            currentGame = ncmd;
                             string src = File.ReadAllText(@"" + ncmd);
                             json = JsonConvert.DeserializeObject<JObject>(src);
+                        }
+                    }
+                    else if (cmd.StartsWith("/save"))
+                    {
+                        if (currentGame == "SPECIAL:NOGAME")
+                        {
+                            Console.WriteLine("No game is running, therefore no game can be saved.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter save path (folder to save in).");
+                            string npath = Console.ReadLine();
+
+                            string toText = "{ \"save\": { \"point\" : \"" + currentLabel + "\" } }";
+
+                            File.WriteAllText(npath, toText);
+
+                            Console.WriteLine("Finished.");
+                        }
+                    }
+                    else if (cmd.StartsWith("/load"))
+                    {
+                        if (currentGame == "SPECIAL:NOGAME")
+                        {
+                            Console.WriteLine("No game is running, therefore no game can be saved.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Enter path.");
+                            string lcmd = Console.ReadLine();
+                            if (!File.Exists(@"" + lcmd))
+                            {
+                                Console.WriteLine("File not found.");
+                            }
+                            else
+                            {
+                                JObject fJson = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(@"" + lcmd));
+                                currentLabel = fJson["save"]["point"]?.ToString();
+                            }
                         }
                     }
                     else
