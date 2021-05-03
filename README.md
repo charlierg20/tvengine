@@ -7,11 +7,8 @@ Open the app, then type /game <path at which a .tves is located>, obviously repl
 ## How it works
 TVEngine is written in C#. It loades JSON-like files called TVEScripts, or TVEHexes. Compiled files called TVECompiles are a planned add in the future. These contain various "labels" that ask the player a question and gets responses, which can in turn direct the player to other labels.
 
-## File types
+## File type
 .tves - Standard files containing a JSON-like script. These are **great** for testing but not so great for any production release, as the user can edit them easily.<br>
-~~.tvhx - A .tves file in hexadecimal format. Harder to read by the user, so are better for commercial release.~~<br>
-~~.tvcm - A fully compiled .tves practically impossible to edit or view by the user in any meaningful format. Support for these hasn't been released yet, and won't be for a while.~~<br>
-TVEngine is open source, and so should it's programs. We want users to be able to remix, recreate, and study code of various games.
 
 ## Developing
 The .tves format has not been finalized, as we are still in active development. .tves are the only supported files at the moment. Here is an example:
@@ -55,10 +52,6 @@ Make is a separate program for easy, flowchart-like development of your TextVent
 TVEDevKit will be a distribution of TVEngine, containing several development utilities including:
 * TVEngine - Base player system.
 * TVEngine Make - GUI TextVenture Creator.
-~~* .tvhx converter - converts a .tvsc to .tvhx.~~
-~~* .tvcm converter - converts a .tvsc or .tvhx to .tvcm.~~
-~~* .exe converter - create a fully packed .exe from a .tvsc, .tvhx, or .tvcm. This can be played without the engine installed.~~
-TVEngine is open source, and so should it's programs. We want users to be able to remix, recreate, and study code of various games. As such, these parts of TVDevKit have been removed.
 
 ## Expected Release
 TVEngine 1.0 is expected to release mid-2021.
