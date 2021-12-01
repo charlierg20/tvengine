@@ -1,5 +1,5 @@
 # tvengine
-TextVentureEngine is a dynamic, powerful engine that can be used to play and make text-adventures playable in the command line.
+TextVentureEngine is a CLI TextVenture engine/player
 
 ## How to use
 Open the app, then type /game <path at which a .tves is located>, obviously replacing the text in <> with a path to a tves. For example, /game C:\Users\Your Username\Desktop\example.tves
